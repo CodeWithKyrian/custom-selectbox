@@ -1,0 +1,82 @@
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #ff6000, #df5807);
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    transform: translateY(-50px);
+}
+
+.title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.select-container {
+    width: 300px;
+    margin: 15px auto;
+    position: relative;
+}
+
+.selected-option {
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.selected-option::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid #000;
+    border-top: 2px solid #000;
+    transform: rotate(-135deg);
+    transition: all 0.4s ease-in-out;
+}
+
+.active .selected-option::after {
+    top: 20px;
+    transform: rotate(45deg);
+}
+
+.options-container {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    transform: rotateX(90deg);
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out;
+}
+
+.active .options-container {
+    transform: rotateX(0);
+}
+
+.option {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #f3975e;
+}
